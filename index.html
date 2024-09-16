@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six-Month Work Report</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f5f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Full-screen Title Page with Original Gradient */
+        .title-page {
+            height: 100vh;
+            background-image: url('https://github.com/vijayasvj/chargcom-portfolio/blob/main/360_F_278427683_zeS9ihPAO61QhHqdU1fOaPk2UClfgPcW-removebg-preview.png?raw=true'), linear-gradient(135deg, #004e92, #000428);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: slideInDown 1s ease forwards;
+        }
+
+        h3 {
+            margin-top: 20px;
+            font-size: 1.8em;
+            font-weight: 300;
+            letter-spacing: 2px;
+            animation: slideInDown 1s ease forwards;
+        }
+
+        h4 {
+            margin-top: 40px;
+            font-size: 1.3em;
+            font-weight: 300;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 120px;
+            height: auto;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Table of Contents Styles */
+        .toc h2 {
+            color: #004e92;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc ul li {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .toc ul li a {
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .toc ul li a:hover {
+            color: #007acc;
+        }
+
+        /* Section Header Styles */
+        section h2 {
+            color: #004e92;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #004e92, #000428);
+            display: block;
+            margin-top: 5px;
+        }
+
+        p, li {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Phase Styles */
+        .phase {
+            margin-top: 30px;
+        }
+
+        .phase h3 {
+            font-size: 1.8em;
+            color: #003366;
+            margin-bottom: 15px;
+            position: relative;
+            animation: fadeInLeft 1s ease forwards;
+        }
+
+        .phase h3::before {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background-color: #003366;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+
+        @keyframes fadeInLeft {
+            0% {
+                transform: translateX(-40px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .divider {
+            height: 2px;
+            background-color: #007acc;
+            margin: 30px 0;
+        }
+
+        .phase-icon {
+            font-size: 3em;
+            color: #007acc;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Roles and Responsibilities Section */
+        .responsibility-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibility-list li {
+            padding: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .responsibility-header {
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        /* Sub-headings inside roles */
+        .sub-heading {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Title Page with Gradient Blue -->
+    <div class="title-page">
+        <img src="https://imgs.search.brave.com/Jp-9r1H0FXP2W5aKKZD-PUPR-ysCZojYlWPHz5l6mN4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY29sbGVnZWR1/bmlhLmNvbS9wdWJs/aWMvaW1hZ2UvZ2l0/YW0tbG9nby5wbmc" alt="GITAM Logo" class="logo">
+        <div class="title-content">
+            <h1>Six-Months Work Report</h1>
+            <h3>(February to July 2024)</h3>
+            <h4>Presented by</h4>
+            <h4>Siva Murali S | Assistant Manager</h4>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="container">
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#introduction">1. Introduction</a></li>
+                <li><a href="#phase1">2. Phase 1: Observing, Learning, and Adaptation</a></li>
+                <li><a href="#phase2">3. Phase 2: Planning and Execution</a></li>
+                <li><a href="#roles">4. Roles & Responsibilities</a></li>
+                <li><a href="#">5. Major Accomplishments</a></li>
+                <li><a href="#">6. Conclusion</a></li>
+            </ul>
+        </div>
+
+        <!-- Introduction Section -->
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This report outlines my professional journey and contributions as the Assistant Manager at the Directorate of Sports, GITAM University, during the six months from February to July 2024. The report is structured in two distinct phases, reflecting the evolving nature of my role and responsibilities over this time.</p>
+
+            <!-- Phase 1 Section -->
+            <div class="phase" id="phase1">
+                <div class="phase-header">
+                    <span class="phase-icon">📘</span>
+                    <h3>Phase 1: Observing, Learning, and Adaptation (February – April 2024)</h3>
+                </div>
+                <p>During the initial three months, my primary focus was observing and understanding the existing sports programs, facilities, and administrative operations at the Directorate of Sports. This period allowed me to become acquainted with the internal processes, gain insight into the university's sports culture, and establish relationships with key stakeholders, including coaches, athletes, and administrative staff. Throughout this phase, I concentrated on learning the specific needs and challenges of the department, as well as identifying areas for improvement. Adaptation was key during this phase as I began to tailor my approach to align with the university's objectives and the dynamic needs of the student-athletes.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Phase 2 Section -->
+            <div class="phase" id="phase2">
+                <div class="phase-header">
+                    <span class="phase-icon">📊</span>
+                    <h3>Phase 2: Planning and Execution (May – July 2024)</h3>
+                </div>
+                <p>In the second phase, I shifted from learning and observation to strategic planning and execution. Building on the insights gathered during the first three months, I initiated the process of implementing improvements in sports event management, facility usage, and team coordination. This phase saw the execution of various sports programs and initiatives aimed at enhancing student engagement and fostering a more structured approach to sports development at the university. I also worked closely with the leadership body and SSAs (Student Sports Assistants) to organize major events and streamline operations, ensuring that GITAM sports functions smoothly and effectively.</p>
+                <p>This two-phased approach enabled me to systematically integrate into my role, understand the department's goals, and contribute meaningfully to the growth of the university's sports culture. The following sections provide a detailed account of my responsibilities, achievements, challenges, and plans during these six months.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Roles and Responsibilities Section -->
+        <section id="roles">
+            <h2>Roles & Responsibilities</h2>
+
+            <p><strong>Role:</strong> Assistant Manager for Recreational Sports Authority to Directorate of Sports.</p>
+
+            <h3>Responsibilities</h3>
+            <ul class="responsibility-list">
+                <li>Managing the Club and SIG Events</li>
+                <li>Handling & Mentoring the Student Sports Associates (SSAs)</li>
+                <li>Supervising the GITAM Sports Committee (GSC)</li>
+                <li>Aiding the Development of GITAM Sports</li>
+                <li>Managing and Handling the Directorate of Sports Events</li>
+            </ul>
+
+            <div class="sub-heading">1. Managing Club and SIG Events</div>
+            <p>I oversee the planning, organization, and execution of sports events and activities conducted by the university’s sports clubs and Sports Interest Groups (SIGs). This includes collaborating with the Club and SIG president & secretary, ensuring proper coordination of resources, and driving participation in various recreational sports events. The goal is to foster inclusivity and engagement in sports activities across diverse student groups.</p>
+
+            <div class="sub-heading">2. Handling & Mentoring the Student Sports Associates (SSAs)</div>
+            <p>A critical part of my role is to manage and mentor the Student Sports Associates (SSAs), who play a key role in supporting the operations and management of sports activities. I provide them with the guidance and leadership required to excel in their roles, helping them develop leadership and organizational skills. I also ensure that they receive the appropriate training and resources to contribute effectively to GITAM’s sports events.</p>
+
+            <div class="sub-heading">3. Supervising the GITAM Sports Committee (GSC)</div>
+            <p>As a supervisor to the GITAM Sports Committee (GSC), I am responsible for ensuring that the committee functions effectively in fulfilling its mandate to promote sports on campus. This includes organizing regular meetings, overseeing the development and implementation of sports activities in the backend, and ensuring that the committee aligns with the university's broader objectives for student engagement and sports development.</p>
+
+            <div class="sub-heading">4. Aiding the Development of GITAM Sports</div>
+            <p>My role includes the strategic development of GITAM’s sports culture, with a focus on expanding the range of sports activities, improving sports events, and increasing student participation. I work closely with other Managers of the Directorate of Sports and university leadership bodies to introduce new programs and initiatives that support the university’s vision of becoming a hub for both recreational and competitive sports. This includes not only the development of facilities and competitive sports but also fostering collaborations of clubs and SIGs, creating opportunities for students to engage in higher-level competitions recreationally.</p>
+
+            <div class="sub-heading">5. Managing and Handling the Directorate of Sports Events</div>
+            <p>One of my core responsibilities is to manage and coordinate major sports events organized by the Directorate of Sports. This involves planning, logistics, vendor management, coordinating with other Directorates, and ensuring that events run smoothly, contributing to the university’s broader sports mission.</p>
+        </section>
+    </div>
+
+</body>
+</html>
