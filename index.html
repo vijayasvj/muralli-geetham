@@ -24,19 +24,42 @@
             border-radius: 8px;
         }
 
-        /* Full-screen Title Page with Original Gradient */
+        /* Title Page with Custom Background and Logos */
         .title-page {
             height: 100vh;
-            background-image:linear-gradient(135deg, #004e92, #000428);
+            background-image: url('https://github.com/vijayasvj/muralli-geetham/blob/main/DSC04300-removebg-preview.png?raw=true');
             background-size: cover;
             background-position: center;
-            color: white;
+            position: relative;
+            color: blue; /* Change to blue if needed */
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            position: relative;
             text-align: center;
+        }
+        
+        /* Semi-transparent overlay */
+        .title-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white overlay */
+            z-index: 1;
+        }
+        
+        /* Ensure the text is above the overlay */
+        .title-page .title-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Add text shadow for better contrast */
+        .title-page h1, .title-page h3, .title-page h4 {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Dark shadow to enhance readability */
         }
 
         h1 {
@@ -62,11 +85,21 @@
             animation: fadeIn 2s ease forwards;
         }
 
-        .logo {
+        /* Logo Styling */
+        .logo-left {
             position: absolute;
             top: 30px;
             left: 30px;
-            width: 120px;
+            width: 150px;
+            height: auto;
+            z-index: 2;
+        }
+
+        .logo-right {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 150px;
             height: auto;
             z-index: 2;
         }
@@ -101,11 +134,15 @@
         .toc ul {
             list-style: none;
             padding-left: 0;
+            font-size: 1.2em;
         }
 
         .toc ul li {
             margin: 10px 0;
-            font-size: 1.2em;
+        }
+
+        .toc ul li ul {
+            margin-left: 20px;
         }
 
         .toc ul li a {
@@ -142,89 +179,40 @@
             line-height: 1.8;
         }
 
-        /* Phase Styles */
-        .phase {
-            margin-top: 30px;
-        }
-
-        .phase h3 {
-            font-size: 1.8em;
-            color: #003366;
-            margin-bottom: 15px;
-            position: relative;
-            animation: fadeInLeft 1s ease forwards;
-        }
-
-        .phase h3::before {
-            content: '';
-            width: 70px;
-            height: 4px;
-            background-color: #003366;
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-        }
-
-        @keyframes fadeInLeft {
-            0% {
-                transform: translateX(-40px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
+        /* Divider Styling */
         .divider {
             height: 2px;
             background-color: #007acc;
             margin: 30px 0;
         }
 
-        .phase-icon {
-            font-size: 3em;
-            color: #007acc;
-            margin-right: 15px;
-            vertical-align: middle;
-        }
-
-        .phase-header {
-            display: flex;
-            align-items: center;
-        }
-
-        /* Roles and Responsibilities Section */
-        .responsibility-list {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .responsibility-list li {
-            padding: 10px 0;
-            font-size: 1.1em;
-        }
-
-        .responsibility-header {
+        /* Button Style for Attachments Link */
+        .button {
+            display: inline-block;
+            background-color: #004e92;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
             font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
             margin-top: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        /* Sub-headings inside roles */
-        .sub-heading {
-            font-size: 1.4em;
-            font-weight: bold;
-            color: #003366;
-            margin-top: 20px;
+        .button:hover {
+            background-color: #007acc;
+            transform: scale(1.05);
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Title Page with Gradient Blue -->
+    <!-- Title Page with Custom Background and Logos -->
     <div class="title-page">
-        <img src="https://imgs.search.brave.com/Jp-9r1H0FXP2W5aKKZD-PUPR-ysCZojYlWPHz5l6mN4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuY29sbGVnZWR1/bmlhLmNvbS9wdWJs/aWMvaW1hZ2UvZ2l0/YW0tbG9nby5wbmc" alt="GITAM Logo" class="logo">
+        <img src="https://github.com/vijayasvj/muralli-geetham/blob/main/GITAM_Deemed_to_be_University_Green_White_BG-1-removebg-preview.png?raw=true" alt="GITAM Logo" class="logo-left">
+        <img src="https://github.com/vijayasvj/muralli-geetham/blob/main/Directorate_of_Sports_Colour-removebg-preview.png?raw=true" alt="Directorate of Sports Logo" class="logo-right">
         <div class="title-content">
             <h1>Six-Months Work Report</h1>
             <h3>(February to July 2024)</h3>
@@ -239,11 +227,30 @@
             <h2>Table of Contents</h2>
             <ul>
                 <li><a href="#introduction">1. Introduction</a></li>
-                <li><a href="#phase1">2. Phase 1: Observing, Learning, and Adaptation</a></li>
-                <li><a href="#phase2">3. Phase 2: Planning and Execution</a></li>
+                <li><a href="#phase1">2. Phase 1: Observing, Learning, and Adaptation</a>
+                    <ul>
+                        <li><a href="#learning-guidelines">Learning the GITAM Sports Guidelines</a></li>
+                        <li><a href="#observing-workflows">Observation of Departmental Workflows</a></li>
+                        <li><a href="#collaboration">Inter-Directorate Collaboration</a></li>
+                        <li><a href="#learning-challenges">Learning from Challenges</a></li>
+                    </ul>
+                </li>
+                <li><a href="#phase2">3. Phase 2: Planning and Execution</a>
+                    <ul>
+                        <li><a href="#managing-goodies">Managing the Goodies for GS Awards</a></li>
+                        <li><a href="#vendor-management">Vendor Selection and Budget Management</a></li>
+                        <li><a href="#handling-time">Handling Time Constraints</a></li>
+                        <li><a href="#financial-processes">Learning Financial Processes at GITAM</a></li>
+                    </ul>
+                </li>
                 <li><a href="#roles">4. Roles & Responsibilities</a></li>
-                <li><a href="#">5. Major Accomplishments</a></li>
-                <li><a href="#">6. Conclusion</a></li>
+                <li><a href="#accomplishments">5. Major Accomplishments</a></li>
+                <li><a href="#sports-ace">6. Sports ACE Awards 2024</a></li>
+                <li><a href="#slb-obt">7. The SLB OBT Program 2024-25</a></li>
+                <li><a href="#sip">8. Student Induction Program (SIP) 2024-25</a></li>
+                <li><a href="#other-accomplishments">9. Other Major Accomplishments (April – August 2024)</a></li>
+                <li><a href="#conclusion">10. Conclusion</a></li>
+                <li><a href="#attachments">11. Attachments and Proof</a></li>
             </ul>
         </div>
 
@@ -259,6 +266,18 @@
                     <h3>Phase 1: Observing, Learning, and Adaptation (February – April 2024)</h3>
                 </div>
                 <p>During the initial three months, my primary focus was observing and understanding the existing sports programs, facilities, and administrative operations at the Directorate of Sports. This period allowed me to become acquainted with the internal processes, gain insight into the university's sports culture, and establish relationships with key stakeholders, including coaches, athletes, and administrative staff. Throughout this phase, I concentrated on learning the specific needs and challenges of the department, as well as identifying areas for improvement. Adaptation was key during this phase as I began to tailor my approach to align with the university's objectives and the dynamic needs of the student-athletes.</p>
+
+                <h4 id="learning-guidelines">Learning the GITAM Sports Guidelines:</h4>
+                <p>The Student Sports Associates (SSAs) were invaluable in guiding me through the foundational aspects of GITAM Sports, from its history to its present-day operations. They explained the guidelines and procedures, helping me understand how the department functions both administratively and operationally. This initial guidance helped me grasp the essence of GITAM Sports and its workflows.</p>
+
+                <h4 id="observing-workflows">Observation of Departmental Workflows:</h4>
+                <p>By closely observing the workflows within GITAM Sports, I gained insights into processes such as event management, coordination between directorates, and the structure of student leaders' involvement. I focused on understanding the outcomes of these processes and how each component contributed to the broader goals of the Directorate of Sports.</p>
+
+                <h4 id="collaboration">Inter-Directorate Collaboration:</h4>
+                <p>Through interactions with other managers, I gained a deeper understanding of how the Directorate of Sports (DoS) collaborates with other departments like Hospitality, Security, and AVS. I observed how these collaborations ensured the success of sports events, and I adapted to these workflows to integrate GITAM Sports' needs into the university's broader operations.</p>
+
+                <h4 id="learning-challenges">Learning from Challenges:</h4>
+                <p>During this phase, I encountered some challenges adjusting to the new environment. However, with the guidance and support of other managers and the SSAs, I quickly rectified these issues. Each challenge presented an opportunity to learn and refine my approach, helping me become a more effective member of the team.</p>
             </div>
 
             <div class="divider"></div>
@@ -269,8 +288,19 @@
                     <span class="phase-icon">📊</span>
                     <h3>Phase 2: Planning and Execution (May – July 2024)</h3>
                 </div>
-                <p>In the second phase, I shifted from learning and observation to strategic planning and execution. Building on the insights gathered during the first three months, I initiated the process of implementing improvements in sports event management, facility usage, and team coordination. This phase saw the execution of various sports programs and initiatives aimed at enhancing student engagement and fostering a more structured approach to sports development at the university. I also worked closely with the leadership body and SSAs (Student Sports Assistants) to organize major events and streamline operations, ensuring that GITAM sports functions smoothly and effectively.</p>
-                <p>This two-phased approach enabled me to systematically integrate into my role, understand the department's goals, and contribute meaningfully to the growth of the university's sports culture. The following sections provide a detailed account of my responsibilities, achievements, challenges, and plans during these six months.</p>
+                <p>In the second phase, I shifted from observation to strategic planning and execution. Building on the insights gathered in the first three months, I implemented improvements in sports event management, facility usage, and team coordination. This phase saw the execution of various sports programs aimed at enhancing student engagement and fostering a structured approach to sports development at the university.</p>
+
+                <h4 id="managing-goodies">Managing the Goodies for the GS Awards:</h4>
+                <p>One of my key tasks was procuring goodies for the GITAM Sports (GS) Awards. With a constrained budget, I explored cost-effective options while maintaining quality. I worked closely with the SSAs and GSC to ensure proper planning and execution, delivering on this key component under the guidance of my manager.</p>
+
+                <h4 id="vendor-management">Vendor Selection and Budget Management:</h4>
+                <p>Given the budget limitations, I explored alternatives to the regular GITAM vendors. After negotiating with new vendors, I successfully secured a vendor that provided quality goodies at a favorable price. This experience improved my vendor management and budget planning skills.</p>
+
+                <h4 id="handling-time">Handling Time Constraints:</h4>
+                <p>With a short deadline, I coordinated closely with vendors and internal teams to ensure timely delivery of the goodies for the GS Awards Show. Despite the tight timeline, all items were delivered on time, which required clear communication and efficient planning.</p>
+
+                <h4 id="financial-processes">Learning Financial Processes at GITAM:</h4>
+                <p>During this phase, I navigated GITAM’s financial processes, working with the Finance Department to manage payments and approvals. This task provided valuable insights into the financial workflow, including documentation and budget management, which will be crucial for future projects.</p>
             </div>
         </section>
 
@@ -279,7 +309,6 @@
         <!-- Roles and Responsibilities Section -->
         <section id="roles">
             <h2>Roles & Responsibilities</h2>
-
             <p><strong>Role:</strong> Assistant Manager for Recreational Sports Authority to Directorate of Sports.</p>
 
             <h3>Responsibilities</h3>
@@ -292,19 +321,116 @@
             </ul>
 
             <div class="sub-heading">1. Managing Club and SIG Events</div>
-            <p>I oversee the planning, organization, and execution of sports events and activities conducted by the university’s sports clubs and Sports Interest Groups (SIGs). This includes collaborating with the Club and SIG president & secretary, ensuring proper coordination of resources, and driving participation in various recreational sports events. The goal is to foster inclusivity and engagement in sports activities across diverse student groups.</p>
+            <p>I oversaw the planning, organization, and execution of sports events conducted by university sports clubs and Sports Interest Groups (SIGs). This included collaborating with Club and SIG leaders, ensuring proper coordination of resources, and driving participation in recreational sports events to foster inclusivity across student groups.</p>
 
             <div class="sub-heading">2. Handling & Mentoring the Student Sports Associates (SSAs)</div>
-            <p>A critical part of my role is to manage and mentor the Student Sports Associates (SSAs), who play a key role in supporting the operations and management of sports activities. I provide them with the guidance and leadership required to excel in their roles, helping them develop leadership and organizational skills. I also ensure that they receive the appropriate training and resources to contribute effectively to GITAM’s sports events.</p>
+            <p>I managed and mentored SSAs, guiding them in their roles and helping them develop leadership and organizational skills. I ensured they received the necessary training and support to contribute effectively to GITAM’s sports initiatives.</p>
 
             <div class="sub-heading">3. Supervising the GITAM Sports Committee (GSC)</div>
-            <p>As a supervisor to the GITAM Sports Committee (GSC), I am responsible for ensuring that the committee functions effectively in fulfilling its mandate to promote sports on campus. This includes organizing regular meetings, overseeing the development and implementation of sports activities in the backend, and ensuring that the committee aligns with the university's broader objectives for student engagement and sports development.</p>
+            <p>As a supervisor, I ensured that the GSC functioned effectively in promoting sports on campus. This included organizing meetings, overseeing the implementation of sports activities, and ensuring alignment with university objectives for student engagement.</p>
 
             <div class="sub-heading">4. Aiding the Development of GITAM Sports</div>
-            <p>My role includes the strategic development of GITAM’s sports culture, with a focus on expanding the range of sports activities, improving sports events, and increasing student participation. I work closely with other Managers of the Directorate of Sports and university leadership bodies to introduce new programs and initiatives that support the university’s vision of becoming a hub for both recreational and competitive sports. This includes not only the development of facilities and competitive sports but also fostering collaborations of clubs and SIGs, creating opportunities for students to engage in higher-level competitions recreationally.</p>
+            <p>I worked closely with other managers and leadership bodies to expand the range of sports activities, improve event management, and increase student participation. I also contributed to the strategic development of GITAM’s sports culture.</p>
 
             <div class="sub-heading">5. Managing and Handling the Directorate of Sports Events</div>
-            <p>One of my core responsibilities is to manage and coordinate major sports events organized by the Directorate of Sports. This involves planning, logistics, vendor management, coordinating with other Directorates, and ensuring that events run smoothly, contributing to the university’s broader sports mission.</p>
+            <p>One of my core responsibilities was managing major sports events, including planning, logistics, vendor management, and coordination with other departments. I ensured that events were executed smoothly, contributing to GITAM’s broader sports mission.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Major Accomplishments Section -->
+        <section id="accomplishments">
+            <h2>Major Accomplishments</h2>
+
+            <div class="phase">
+                <div class="phase-header">
+                    <span class="phase-icon">🏆</span>
+                    <h3>Phase 1 Accomplishments: Observing, Learning, and Adaptation (February – April 2024)</h3>
+                </div>
+                <p>During this period, I focused on learning and adapting to the workflows within GITAM Sports. Key accomplishments during this phase include:</p>
+                <ul>
+                    <li>Learning the GITAM Sports guidelines and understanding departmental workflows.</li>
+                    <li>Collaborating with other directorates and building relationships with key stakeholders.</li>
+                    <li>Identifying areas for improvement and adapting my approach to align with GITAM’s objectives.</li>
+                </ul>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="phase">
+                <div class="phase-header">
+                    <span class="phase-icon">📈</span>
+                    <h3>Phase 2 Accomplishments: Planning and Execution (May – July 2024)</h3>
+                </div>
+                <p>In the second phase, I transitioned from learning to actively leading and executing projects. Key accomplishments include:</p>
+                <ul>
+                    <li>Managing the procurement of goodies for the GS Awards under a constrained budget.</li>
+                    <li>Negotiating with new vendors to stay within budget while maintaining quality.</li>
+                    <li>Handling time constraints and ensuring the timely execution of key deliverables.</li>
+                    <li>Gaining valuable insights into GITAM’s financial processes, including vendor payments and budget management.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Sports ACE Awards 2024 Section -->
+        <section id="sports-ace">
+            <h2>Sports ACE Awards 2024</h2>
+            <p>At the end of April 2024, the Directorate of Sports (DoS) hosted the prestigious Sports ACE Awards 2024 to celebrate the achievements of students across all three GITAM campuses. As the Assistant Manager, I was responsible for leading the event, including vendor management, digital marketing, and cross-campus coordination.</p>
+
+            <h4>Key Responsibilities:</h4>
+            <ul>
+                <li>Led the event planning, vendor selection, and award selection process.</li>
+                <li>Coordinated with Assistant Managers from other GITAM campuses to ensure the event’s success.</li>
+                <li>Managed digital marketing campaigns to promote the event.</li>
+                <li>Handled technical and logistical aspects, including hospitality and travel arrangements.</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- SLB OBT Program 2024-25 Section -->
+        <section id="slb-obt">
+            <h2>The SLB OBT Program 2024-25</h2>
+            <p>Following the success of the Sports ACE Awards, I was entrusted with leading the Student Leaders Boot Camp (SLB) Out-Bound Training Program. This program fostered teamwork and leadership among the new SSAs across all three GITAM campuses. I managed the planning, vendor selection, and design of deliverables such as custom ID cards and T-shirts.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Student Induction Program (SIP) 2024-25 Section -->
+        <section id="sip">
+            <h2>Student Induction Program (SIP) 2024-25</h2>
+            <p>The SIP 2024-25 introduced freshmen to GITAM Sports. I handled the planning and execution of this event, coordinating with my Senior Manager to manage on-stage presentations, budget constraints, and team delegation. The event also featured a Sports Tryout Experience Zone, which saw participation from over 1,500 students.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Other Major Accomplishments Section -->
+        <section id="other-accomplishments">
+            <h2>Other Major Accomplishments (April – August 2024)</h2>
+            <p>Throughout this period, I also contributed to several additional tasks:</p>
+            <ul>
+                <li>Managed hospitality and budgeting for the GS Awards.</li>
+                <li>Designed promotional materials for International Yoga Day.</li>
+                <li>Prepared the SSA Meeting Calendar for AY 2024-25.</li>
+                <li>Organized the Annual General Body Meeting for Clubs and SIGs.</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Conclusion Section -->
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>The past six months have been transformative, filled with challenges and opportunities for growth. I’ve developed a deeper understanding of the Directorate of Sports and its role in student engagement. Each project has pushed me to take on greater responsibilities, and I look forward to continuing to contribute to GITAM Sports’ success.</p>
+        </section>
+
+        <!-- Attachments Section -->
+        <section id="attachments">
+            <h2>Attachments and Proof</h2>
+            <p>Click the button below to view the supporting documents and proofs for the events and accomplishments mentioned in this report.</p>
+            <a href="https://docs.google.com/document/d/1ofdocaZEM2IZTXdkIEyv0sO0YTZW8ZucKtX3xIWIDoA/edit?" class="button" target="_blank">View Attachments</a>
         </section>
     </div>
 
